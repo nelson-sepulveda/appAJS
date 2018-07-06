@@ -45,4 +45,5 @@ angular
         // controller:'FriendsAppCtrl',
         templateUrl:'views/mensajes.html'
       });
-  });
+  })
+  ;

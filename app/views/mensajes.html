@@ -1,4 +1,6 @@
-<md-toolbar class="tool md-hue-2" style="background-color: #1EB4DC;">
+
+<div ng-controller="toggleMenu" layout="column"  ng-cloak>
+  <md-toolbar class="tool md-hue-2" style="background-color: #1EB4DC;">
     <div class="md-toolbar-tools">
       <h2 flex md-truncate>Messages</h2>
 
@@ -21,4 +23,24 @@
       </md-button>
     </div>
   </md-toolbar>
-<p>This is the mensajes view.</p>
+</div>
+
+  <div ng-controller="AppCtrl" layout="row" ng-cloak style="height: 300px">
+    <style>
+        .edgePadding {
+          padding-left: 25px;
+          padding-right: 25px;
+        }
+    </style>
+
+    <h4>Seccion de mensajes</h4>
+    <div layout="column" layout-align="center start" layout-padding flex>
+  
+      <div class="dialog-demo-content" layout="column" layout-align="center center" style="width:100%">
+        <md-button class="md-primary md-raised edgePadding" ng-click="openFromLeft()" >
+          Ver informacion
+        </md-button>
+      </div>
+  
+    </div>
+  </div>
