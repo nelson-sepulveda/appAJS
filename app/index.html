@@ -12,8 +12,7 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
     <link rel="stylesheet" href="bower_components/roboto-fontface/css/roboto/roboto-fontface.css" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -70,7 +69,7 @@
               <h6 class="md-subhead">Management</h6>
   
               <md-list-item>
-                <md-button>
+                <md-button ui-sref="basura">
                   <md-icon class="material-icons">
                     delete
                   </md-icon>
@@ -89,15 +88,12 @@
           </md-content>   
         </md-sidenav>
         
+
         <!-- Toolbar -->
         <md-content flex>
           <div class="mensajes">
             <ui-view></ui-view>      
-            <!-- <md-button class="md-fab" aria-label="Eat cake">
-              <md-icon md-svg-src=""></md-icon>
-            </md-button> -->
           </div>
-          
         </md-content>
       </section>
     </div>
@@ -128,6 +124,7 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
+        <script src="scripts/services/consumo.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/menu.js"></script>

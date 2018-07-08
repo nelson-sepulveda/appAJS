@@ -12,86 +12,33 @@ angular.module('yeomanApp')
   $mdThemingProvider.theme('altTheme')
     .primaryPalette('purple');
 })
-.controller('FriendsAppCtrl', function($scope) {
-      
-    var imagePath = 'images/yeoman.png';
-    $scope.messages = [
-      {
-        face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
-        when: '3:08PM',
-        notes: '   be in your neighborhood doing errands'
-      },
-      {
-        face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
-        when: '3:08PM',
-        notes: '   be in your neighborhood doing errands'
-      },
-      {
-        face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
-        when: '3:08PM',
-        notes: '   be in your neighborhood doing errands'
-      },
-      {
-        face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
-        when: '3:08PM',
-        notes: '   be in your neighborhood doing errands'
-      },
-      {
-        face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
-        when: '3:08PM',
-        notes: '   be in your neighborhood doing errands'
-      },
-      {
-        face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
-        when: '3:08PM',
-        notes: '   be in your neighborhood doing errands'
-      },
-      {
-        face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
-        when: '3:08PM',
-        notes: '   be in your neighborhood doing errands'
-      },
-      {
-        face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
-        when: '3:08PM',
-        notes: '   be in your neighborhood doing errands'
-      },
-      {
-        face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
-        when: '3:08PM',
-        notes: '   be in your neighborhood doing errands'
-      },
-      {
-        face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
-        when: '3:08PM',
-        notes: '   be in your neighborhood doing errands'
-      },
-      {
-        face : imagePath,
-        what: 'Brunch this weekend?',
-        who: 'Min Li Chan',
-        when: '3:08PM',
-        notes: ' be in your neighborhood doing errands'
-      }
-    ];
-});
+.controller('FriendsAppCtrl', function($scope,$http,consumo) {
+
+  var url = 'http://192.168.1.2:1337/todo';
+  var vm = this;    
+  vm.data = {};
+  vm.titulo="hola";
+    
+  vm.submit= function(){
+    console.log(vm.data); 
+    $http.post(url,
+    vm.data
+  ).then(function(rta){
+    console.log(rta);
+  }),
+    function(error){
+      console.log(error);
+    };
+  };
+
+   vm.users=[]; 
+   vm.getSubmit=function(){
+    $http.get(url).then(function(rta){
+      vm.users=rta.data;
+      console.log(rta);
+    }),
+    function(err){
+      console.log(err);
+    };
+   };
+});  

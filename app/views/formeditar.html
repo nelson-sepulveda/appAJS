@@ -1,0 +1,43 @@
+<md-dialog>
+  <form>
+    <md-dialog-content>
+      <md-list>
+        <md-list-item>
+          <md-input-container>
+            <input type="hidden" ng-model="dashboardEdit.data.id">
+          </md-input-container> 
+        </md-list-item>
+        <md-list-item>
+          <md-input-container>
+            <label for="">Titulo</label>
+            <input type="text" ng-model="dashboardEdit.data.titulo">
+          </md-input-container> 
+        </md-list-item>
+        <md-list-item>
+          <md-input-container>
+            <label for="">Descripcion</label>
+            <input type="text" ng-model="dashboardEdit.data.descripcion">
+          </md-input-container> 
+        </md-list-item>  
+      </md-list>
+    </md-dialog-content>
+      
+      <md-dialog-actions>
+        <md-button class="md-raised" 
+          ng-click="dashboardEdit.editarInfo(
+          dashboardEdit.data.id,
+          dashboardEdit.data.titulo,
+          dashboardEdit.data.descripcion)">
+
+          <md-icon class="material-icons">
+            edit
+          </md-icon>
+        </md-button>
+        <md-button ng-click="dashboardEdit.closeDialog()">
+          <md-icon class="material-icons">
+            close
+          </md-icon>
+        </md-button>
+      </md-dialog-actions>
+    </form>
+</md-dialog>

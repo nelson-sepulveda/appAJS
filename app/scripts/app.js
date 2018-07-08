@@ -12,6 +12,7 @@ angular
   .module('yeomanApp', [  
     'ngMaterial',
     'ui.router',
+    'ngResource'
   ])
   .config(function ($stateProvider){
 
@@ -36,7 +37,8 @@ angular
       state('dashboard', {
         name:'dashboard',
         url:'/dashboard',
-        // controller:'FriendsAppCtrl',
+        controller:'DashboardCtrl',
+        controllerAs:'dashboard',
         templateUrl:'views/dashboard.html'
       }).
       state('mensajes', {
@@ -44,6 +46,22 @@ angular
         url:'/mensajes',
         // controller:'FriendsAppCtrl',
         templateUrl:'views/mensajes.html'
+      }).
+      state('basura', {
+        name:'basura',
+        url:'/trash',
+        // controller:'FriendsAppCtrl',
+        templateUrl:'views/trash.html'
       });
   })
-  ;
+  .controller('controlador',function($scope){
+    $scope.nombre = "Nelson";
+  
+    var vm = this;    
+    vm.data = {};
+    vm.titulo="hola";
+    vm.submit= function(){
+      console.log(vm.data.nombre); 
+    }  
+  });
+  

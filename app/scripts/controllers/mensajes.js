@@ -2,7 +2,7 @@
 
 angular.module('yeomanApp')
 
-.controller('AppCtrl', function($scope, $mdDialog) {
+.controller('AppCtrl', function($scope, $mdDialog){
   $scope.openFromLeft = function() {
     $mdDialog.show(
       $mdDialog.alert()
